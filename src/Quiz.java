@@ -23,7 +23,7 @@ public class Quiz {
 
     /**
      * Quiz the user using the questions and answers loaded by the FlashCardReader.
-     * This method will iterate through the FlashCards contained the the flashCards ArrayList and ask the user each
+     * This method will iterate through the FlashCards contained in the flashCards ArrayList and ask the user each
      * question. They are then able to enter an answer which is compared with the correct answer, and if they are
      * the same then the user will be told that they are correct. If not, the correct answer is shown. At the end of
      * the quiz, the user is shown their score and given the option to save their results.
