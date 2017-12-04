@@ -4,15 +4,14 @@ import java.util.ArrayList;
 /**
  * Handles user interaction for a quiz using questions and answers stored on FlashCards.
  */
-public class Quiz {
-    FlashCardReader flashCardReader;
-    ArrayList<FlashCard> flashCards;
+class Quiz {
+    private ArrayList<FlashCard> flashCards;
 
     /**
      * Class constructor which populates the flashCards ArrayList and then starts the quiz.
      */
-    Quiz(){
-        flashCardReader = new FlashCardReader();
+    private Quiz(){
+        FlashCardReader flashCardReader = new FlashCardReader();
         try {
             flashCards = flashCardReader.getFlashCards();
         }catch (IOException e){
@@ -28,7 +27,7 @@ public class Quiz {
      * the same then the user will be told that they are correct. If not, the correct answer is shown. At the end of
      * the quiz, the user is shown their score and given the option to save their results.
      */
-    public void play(){
+    private void play(){
         BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
         int questionNumber = 1, score = 0;
         ArrayList<String> saveData = new ArrayList<>();
@@ -81,7 +80,7 @@ public class Quiz {
      * got correct after this.
      * @param saveData ArrayList containing the results of the quiz to be written to the file.
      */
-    public void save(ArrayList<String> saveData){
+    private void save(ArrayList<String> saveData){
         try {
             PrintStream writer = new PrintStream("save.txt");
             for(String result : saveData){

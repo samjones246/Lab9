@@ -7,8 +7,8 @@ import java.util.ArrayList;
 /**
  * This class is used for reading questions from a text file to create flash cards
  */
-public class FlashCardReader {
-    BufferedReader reader;
+class FlashCardReader {
+    private BufferedReader reader;
 
     /**
      * Default class constructor
@@ -26,7 +26,7 @@ public class FlashCardReader {
      * @return next line in file as a string
      * @throws IOException the exception thrown if the file cannot be read
      */
-    public String getLine() throws IOException{
+    private String getLine() throws IOException{
         return reader.readLine();
     }
 
@@ -45,7 +45,7 @@ public class FlashCardReader {
      * @return ArrayList of flashcards with questions and answers
      * @throws IOException the exception thrown if the file cannot be read
      */
-    public ArrayList<FlashCard> getFlashCards() throws IOException{
+    ArrayList<FlashCard> getFlashCards() throws IOException{
         ArrayList<FlashCard> flashCardArrayList = new ArrayList<>();
         String nextLine;
         while((nextLine = getLine())!=null){
